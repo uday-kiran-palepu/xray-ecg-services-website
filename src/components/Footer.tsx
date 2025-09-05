@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Stethoscope } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 /* 
  * FOOTER COMPONENT - SITE-WIDE FOOTER
@@ -21,13 +22,24 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* EDITABLE: Company Information Section */}
           <div className="space-y-4">
-            {/* EDITABLE: Company Logo and Name */}
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#1E8449] to-[#2980B9] rounded-lg flex items-center justify-center">
-                <Stethoscope className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-xl font-bold">Q Path Diagnostics</span> {/* EDITABLE: Company name */}
-            </div>
+            {/* EDITABLE: Company Logo */}
+            <Link to="/" className="flex items-center group">
+              <motion.div 
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                className="bg-white opacity-90 rounded-lg p-2" /* Added white background, transparency, border radius, and padding for logo */
+              >
+                {/* EDITABLE: Company Logo Image - Update src to change logo, alt for accessibility */}
+                <img
+                  src="https://raw.githubusercontent.com/uday-kiran-palepu/Website-Images/refs/heads/main/Abg-services%20-Images/Q%20path%20Logo%20300dpi.png"
+                  alt="Q Path Diagnostics Logo"
+                  width={250}
+                  height={80}
+                  className="object-contain"
+                />
+              </motion.div>
+            </Link>
+            
             {/* EDITABLE: Company Description */}
             <p className="text-gray-300 leading-relaxed">
               Hyderabad's first at-home diagnostic service provider offering ABG, ECG, and X-Ray tests. 
@@ -46,16 +58,16 @@ export const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold mb-6">Our Services</h3>
             {/* EDITABLE: Service Navigation Links */}
             <div className="space-y-3">
-              <Link to="/abg" /* EDITABLE: ABG page link */ className="block text-gray-300 hover:text-[#1E8449] transition-colors">
+              <Link to="/abg" className="block text-gray-300 hover:text-[#1E8449] transition-colors">
                 ABG Test - Arterial Blood Gas Analysis
               </Link>
-              <Link to="/ecg" /* EDITABLE: ECG page link */ className="block text-gray-300 hover:text-[#1E8449] transition-colors">
+              <Link to="/ecg" className="block text-gray-300 hover:text-[#1E8449] transition-colors">
                 ECG Test - Electrocardiogram
               </Link>
-              <Link to="/xray" /* EDITABLE: X-Ray page link */ className="block text-gray-300 hover:text-[#1E8449] transition-colors">
+              <Link to="/xray" className="block text-gray-300 hover:text-[#1E8449] transition-colors">
                 X-Ray - Digital X-Ray Services
               </Link>
-              <Link to="/contact" /* EDITABLE: Contact page link */ className="block text-gray-300 hover:text-[#1E8449] transition-colors">
+              <Link to="/contact" className="block text-gray-300 hover:text-[#1E8449] transition-colors">
                 Book a Test Now
               </Link>
             </div>
@@ -69,8 +81,8 @@ export const Footer: React.FC = () => {
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-[#1E8449]" />
                 <div>
-                  <a href="tel:+918712197228" /* EDITABLE: Phone contact link */ className="text-gray-300 hover:text-white transition-colors">
-                    +91 87121 97228 {/* EDITABLE: Display phone number */}
+                  <a href="tel:+918712197228" className="text-gray-300 hover:text-white transition-colors">
+                    +91 87121 97228
                   </a>
                   <div className="text-sm text-gray-400">24/7 Emergency Service</div>
                 </div>
@@ -80,8 +92,8 @@ export const Footer: React.FC = () => {
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-[#2980B9]" />
                 <div>
-                  <a href="mailto:contact@qpathdiagnostics.com" /* EDITABLE: Email contact link */ className="text-gray-300 hover:text-white transition-colors">
-                    contact@qpathdiagnostics.com {/* EDITABLE: Display email address */}
+                  <a href="mailto:contact@qpathdiagnostics.com" className="text-gray-300 hover:text-white transition-colors">
+                    contact@qpathdiagnostics.com
                   </a>
                   <div className="text-sm text-gray-400">Quick Response Guaranteed</div>
                 </div>
@@ -92,7 +104,6 @@ export const Footer: React.FC = () => {
                 <MapPin className="w-5 h-5 text-[#1E8449] mt-1" />
                 <div>
                   <div className="text-gray-300">Service Coverage</div>
-                  {/* EDITABLE: Service Coverage Areas */}
                   <div className="text-sm text-gray-400">All areas of Hyderabad & Secunderabad</div>
                 </div>
               </div>
@@ -109,13 +120,13 @@ export const Footer: React.FC = () => {
             </div>
             {/* EDITABLE: Legal Links */}
             <div className="flex space-x-6 text-sm">
-              <Link to="/contact" /* EDITABLE: Privacy policy link */ className="text-gray-400 hover:text-white transition-colors">
+              <Link to="/contact" className="text-gray-400 hover:text-white transition-colors">
                 Privacy Policy
               </Link>
-              <Link to="/contact" /* EDITABLE: Terms of service link */ className="text-gray-400 hover:text-white transition-colors">
+              <Link to="/contact" className="text-gray-400 hover:text-white transition-colors">
                 Terms of Service
               </Link>
-              <Link to="/contact" /* EDITABLE: Medical disclaimer link */ className="text-gray-400 hover:text-white transition-colors">
+              <Link to="/contact" className="text-gray-400 hover:text-white transition-colors">
                 Medical Disclaimer
               </Link>
             </div>
